@@ -4,8 +4,11 @@
 4GP graphene-based sensor project
 
 [Necessary components](#necessary-components)
+
 [Amplifier circuit](#amplifier-circuit)
+
 [Graphite sensor](#graphite-sensor)
+
 [OLED screen](#oled-screen)
 
 ## Necessary components
