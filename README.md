@@ -3,21 +3,19 @@
 
 Projet Capteur à base de graphène 4GP
 
-/// ordre des parties à revoir \\\
-
 ## 1) Matériel nécessaire
 
 Pour réaliser ce projet, nous avons eu besoin de : 
-  - 1 capteur graphite
+  - 1 capteur à base de graphite
   - 1 flex sensor
-  - 1 potentiomètre digital MCP
-  -
+  - 1 potentiomètre digital
+  - 1 Arduino UNO
   -
   -
 
-## ??) Circuit amplificateur 
+## 2) Circuit amplificateur 
 
-## ??) Capteur Graphite
+## 3) Capteur Graphite
 
 /// Mettre schéma du capteur \\\
  Schéma du capteur utilisé lors du projet. Il sera rempli à l'aide de différents types de crayons de papiers. 
