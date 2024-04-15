@@ -2,9 +2,9 @@
 # Étudiants : Maël LE BLANC, Daniel PERALES RIOS
 
 Projet Capteur à base de graphène 4GP
-[Necessary components](#Capteur-Graphite)
+[Necessary components](#necessary-components)
 
-## 1)Necessary components
+## 1) Necessary components
 
 Pour réaliser ce projet, nous avons eu besoin de : 
   - 1 capteur à base de graphite
