@@ -1,4 +1,5 @@
-# 2023-2024-4GP : Maël LE BLANC, Daniel PERALES RIOS
+# Projet capteur 4GP 2023-2024
+# Étudiants : Maël LE BLANC, Daniel PERALES RIOS
 
 Projet Capteur à base de graphène 4GP
 
