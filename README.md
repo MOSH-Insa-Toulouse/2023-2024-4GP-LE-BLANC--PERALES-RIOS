@@ -42,7 +42,7 @@ Dans ce menu, la valeur de la résistance du capteur à base de graphite est aff
 
 ## ??) Datasheet
 
-## TODO List
+
 
 - [x] Create repository on MOSH-Insa-Toulouse organization
 - [x] Add KiCad project with version 7.0.10
