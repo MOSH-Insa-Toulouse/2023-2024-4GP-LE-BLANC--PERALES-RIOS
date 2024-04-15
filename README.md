@@ -1,43 +1,36 @@
-# Projet capteur 4GP 2023-2024
-# Étudiants : Maël LE BLANC, Daniel PERALES RIOS
+# 4GP 2023-2024 "Projet capteur"
+# Students : Maël LE BLANC, Daniel PERALES RIOS
 
-Projet Capteur à base de graphène 4GP
+4GP graphene-based sensor project
 
-[Necessary components](#necessary-components)
+[Necessary components](#1.necessary-components)
 
-## Necessary components
+## 1.Necessary components
 
-Pour réaliser ce projet, nous avons eu besoin de : 
-  - 1 capteur à base de graphite
+To carry out this project, we needed : 
+  - 1 graphite-based sensor
   - 1 flex sensor
-  - 1 potentiomètre digital
+  - 1 digital potentiometer
   - 1 Arduino UNO
   -
   -
 
-## 2) Circuit amplificateur 
+## 2) Amplifier circuit 
 
-## 3) Capteur Graphite
+## 3) Graphite sensor
 
-/// Mettre schéma du capteur \\\
- Schéma du capteur utilisé lors du projet. Il sera rempli à l'aide de différents types de crayons de papiers. 
+/// Drawing of the sensor
+ Diagram of the sensor used in the project. It will be filled in using different types of pencil. 
 
-## 4) Ecran OLED
-La page principale de l'écran OLED présente 3 menus différents : Réglage des valeurs du potentiomètre digital, valeurs du capteur de flexion et valeurs du capteur à base de graphène. L'utilisateur peut choisir le menu à l'aide de l'encodeur rotatoire. En tournant le bouton, l’utilisateur peut sélectionner les différents menus déroulants et en appuyant sur le bouton, l'utilisateur rentre dans un menu spécifique. 
+## 4) OLED screen
+The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, bending sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
 
-#### Menu du potentiomètre :
-Dans ce menu, l'utilisateur choisit la valeur de résistance à donner au potentiomètre en plaçant le curseur sur les valeurs disponibles. L'utilisateur quitte le menu calibration en appuyant sur le bouton de l'encodeur. 
-#### Menu Flex Sensor :
-Dans ce menu, la valeur de la résistance et la valeur de l'angle du Flex Sensor sont affichées.  
-#### Menu Flex Sensor :
-Dans ce menu, la valeur de la résistance du capteur à base de graphite est affichée. 
+#### Potentiometer menu :
+In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
+#### Flex Sensor menu:
+In this menu, the value of the resistance and the value of the angle of the Flex Sensor are displayed.  
+#### Flex Sensor menu:
+In this menu, the resistance value of the graphite-based sensor is displayed. 
 
-## ??) Application Android
 
-## ??) Création du PCB avec KiCAD
-
-## ??) Shield Arduino
-
-## ??) Banc de test 
-
-## ??) Datasheet
+Translated with DeepL.com (free version)
