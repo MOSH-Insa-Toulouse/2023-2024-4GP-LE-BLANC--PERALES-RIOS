@@ -2,7 +2,7 @@
 # Étudiants : Maël LE BLANC, Daniel PERALES RIOS
 
 Projet Capteur à base de graphène 4GP
-[Necessary components](#capteur-graphite)
+[Necessary components](#Capteur-Graphite)
 
 ## 1)Necessary components
 
