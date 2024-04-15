@@ -41,11 +41,3 @@ Dans ce menu, la valeur de la résistance du capteur à base de graphite est aff
 ## ??) Banc de test 
 
 ## ??) Datasheet
-
-
-
-- [x] Create repository on MOSH-Insa-Toulouse organization
-- [x] Add KiCad project with version 7.0.10
-- [x] Create KiCad schematic
-- [x] Add Arduino project
-
