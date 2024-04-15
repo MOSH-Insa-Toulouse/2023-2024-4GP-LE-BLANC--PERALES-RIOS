@@ -1,4 +1,4 @@
-# 2023-2024-4gp-Perales_Rios-Le_Blanc
+# 2023-2024-4GP : Maël LE BLANC, Daniel PERALES RIOS
 
 Projet Capteur à base de graphène 4GP
 
@@ -7,9 +7,9 @@ Projet Capteur à base de graphène 4GP
 ## 1) Matériel nécessaire
 
 Pour réaliser ce projet, nous avons eu besoin de : 
-  - 
-  -
-  -
+  - 1 capteur graphite
+  - 1 flex sensor
+  - 1 potentiomètre digital MCP
   -
   -
   -
