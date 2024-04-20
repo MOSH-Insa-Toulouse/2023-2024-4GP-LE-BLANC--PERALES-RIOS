@@ -17,23 +17,23 @@ Finally, we have mounted all the sensors in a PCB we have built from scratch usi
 
 This project covers the entire sensor field, right up to the development of a datasheet and test bench for this sensor.
 
-[Principle of the measurement](#principle-of-the-measurement-for-the-graphite-and-flex-sensors)
+- [Principle of the measurement](#principle-of-the-measurement-for-the-graphite-and-flex-sensors)
 
-[Necessary components for the project](#necessary-components)
+- [Necessary components for the project](#necessary-components)
 
-[Overview of the project circuit](#overview-of-the-project-circuit)
+- [Overview of the project circuit](#overview-of-the-project-circuit)
 
-[KiCAD PCB design](#kicad-pcb-design)
+- [KiCAD PCB design](#kicad-pcb-design)
 
-  [Amplifier circuit](##amplifier-circuit)
+    - [Amplifier circuit](#amplifier-circuit)
 
-[Graphite sensor](#graphite-sensor)
+- [Graphite sensor](#graphite-sensor)
 
-[OLED screen](#oled-screen)
+- [OLED screen](#oled-screen)
 
-[Android App](#android-app)
+- [Android App](#android-app)
 
-[Test Bench](#test-bench)
+- [Test Bench](#test-bench)
 
 ## Principle of the measurement for the graphite and flex sensors
 
@@ -66,7 +66,7 @@ To carry out this project, we needed:
 
 ## Overview of the project circuit
 
-### Amplifier circuit 
+## Amplifier circuit 
 
 ### Graphite sensor
 
