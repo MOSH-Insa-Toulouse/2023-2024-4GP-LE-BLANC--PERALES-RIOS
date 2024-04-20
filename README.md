@@ -77,8 +77,9 @@ In this menu, the value of the resistance and the value of the angle of the Flex
 In this menu, the resistance value of the graphite-based sensor is displayed. 
 
 # KiCAD PCB design
-To realise our PCB we have used KiCAD under its 7.0 version. 
-First of all, we had to reproduce the electrical amplifier circuit (resistances, capacitors...) with a few changes and component additions. In order to adjust the gain of our circuit, we've replaced the resistance R2 by a digital potentiometer which can be controlled using the encoder. Then for the realisation of the test bench we had to add some components that need to be connected to the power source, such as the flex sensor, the bluetooth module or the OLED screen. For that, we've created some symbols associated to the new elements. 
+To realise our PCB we have used KiCAD under its 7.0 version.
+
+First of all, we had to reproduce the electrical amplifier circuit (resistances, capacitors...) with a few changes and component additions. In order to adjust the gain of our circuit, we have replaced the resistance R2 by an MCP41050 digital potentiometer which can be controlled using the KY-040 rotary encoder. Then, for the realisation of the test bench we had to add some components that need to be connected to the power source, such as the flex sensor, the Bluetooth® module or the OLED screen. For that, we have created some symbols associated to the new elements. 
 
 On the picture below, it is possible to see our complete electrical circuit realised in KiCAD with the different symbols of the components. 
 
