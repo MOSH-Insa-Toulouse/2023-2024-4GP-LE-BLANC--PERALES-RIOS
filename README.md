@@ -87,7 +87,7 @@ On the picture below, it is possible to see our complete electrical circuit real
 
 Figure 2 : Complete schematic of the electrical circuit in KiCAD for the project.
 
-![Imagen2](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/8e232d55-1ca7-4d92-b692-054096b19475)
+![Sin título](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/92e3f787-637e-4297-bfe6-bed382c1b954)
 
 Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
 
