@@ -65,6 +65,10 @@ To carry out this project, we needed:
 
 # Overview of the project
 
+
+
+
+
 ### Potentiometer menu
 In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
 ### Flex Sensor menu:
@@ -75,7 +79,16 @@ In this menu, the resistance value of the graphite-based sensor is displayed.
 # KiCAD PCB design
 To realise our PCB we have used KiCAD under its 7.0 version. 
 First of all, we had to reproduce the electrical amplifier circuit (resistances, capacitors...) with a few changes and component additions. In order to adjust the gain of our circuit, we've replaced the resistance R2 by a digital potentiometer which can be controlled using the encoder. Then for the realisation of the test bench we had to add some components that need to be connected to the power source, such as the flex sensor, the bluetooth module or the OLED screen. For that, we've created some symbols associated to the new elements. 
-On the picture below, it is possible to see our whole and complete electrical circuit realised in KiCAD with the different symbols of the components. 
+
+On the picture below, it is possible to see our complete electrical circuit realised in KiCAD with the different symbols of the components. 
+
+![Imagen3](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/d0222252-2c63-4f89-aab1-a1b74a817181)
+
+Figure 2 : Complete schematic of the electrical circuit in KiCAD for the project.
+
+![Imagen2](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/8e232d55-1ca7-4d92-b692-054096b19475)
+
+Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
 
 ///mettre image du circuit KiCAD \\\ 
 Then, the second part is to realise the footprint of the PCB on KiCAD. However, all the components and the whole circuit have to fit on Arduino Uno Shield. So, the spatial arrangement must be thoughtful, while considering the 3D shape of the components and the specifications we have to follow for the PCB printing. 
