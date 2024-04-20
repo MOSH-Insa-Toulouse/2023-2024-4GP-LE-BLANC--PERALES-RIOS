@@ -8,8 +8,7 @@ The aim of this project is to study a graphite-based low-tech sensor, based on t
 
 According to this research, graphite particles, deposited by coloring a sensor trace, can act as strain gauges. These strain gauges can then be used to measure resistances of the order of the Giga-ohm (10E9 Ohms), for a much cheaper price than buying a multimeter able to measure this order of resistance.
 
-To study this graphene-based low-tech sensor, we have made an amplifier circuit that allows to measure the current flowing through the graphite sensor. This current is very small, and to measure it we would need a very expensive multimeter. Moreover, as the resistance of the graphene sensor depends on each graphite sensor, we have added a digital potentiometer in one of the resistances of the amplifier circuit. This allows for tuning the circuit to each sensor.
-We have also added a flex sensor to the project. The resistance of this sensor depends on the bending angle applied to it.
+To study this graphene-based low-tech sensor, we have made an amplifier circuit that allows to measure the current flowing through the graphite sensor. This current is very small, and to measure it we would need a very expensive multimeter. Moreover, as the resistance of the graphene sensor depends on each graphite sensor, we have added a digital potentiometer in one of the resistances of the amplifier circuit. This allows for tuning the circuit to each sensor. We have also added a flex sensor to the project. The resistance of this sensor depends on the bending angle applied to it.
 
 All the sensors and measurements are managed through an Arduino UNO board. In this Arduino UNO board, we have also connected an OLED screen that displays the data being measured. We have also implemented a simple menu in the screen that can be controlled through a rotary encoder. All the gathered data is then sent via a Bluetooth® module to an Android device though an app we have built using MIT’s App Inventor.
 
@@ -30,7 +29,6 @@ This project covers the entire sensor field, right up to the development of a da
     - [OLED screen](#oled-screen)
     - [Rotary encoder](#rotary-encoder)
       
-
 - [Android App](#android-app)
 
 - [Test Bench](#test-bench)
@@ -82,26 +80,34 @@ To carry out this project, we needed:
 
 ## KY-040 Rotary encoder
 
-/// Drawing of the sensor
- 
 
 ## OLED screen
-The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, bending sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
+
+The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, flex sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
+
+### Potentiometer menu
+
+In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
+
+(Insert photo of the menu)
+
+### Flex sensor menu
+
+In this menu, the value of the resistance and the value of the angle of the flex sensor are displayed.  
+
+(Insert photo of the menu)
+
+### Grpahite sensor menu
+
+In this menu, the user can see the current value of the graphite sensor. The user exits to the main menu by pressing the encoder button.
+
+(Insert photo of the menu)
 
 ## Rotary encoder
 
 
-
-
-
-### Potentiometer menu
-In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
-### Flex Sensor menu:
-In this menu, the value of the resistance and the value of the angle of the Flex Sensor are displayed.  
-### Flex Sensor menu:
-In this menu, the resistance value of the graphite-based sensor is displayed. 
-
 # KiCAD PCB design
+
 To realise our PCB we have used KiCAD under its 7.0 version.
 
 First of all, we had to reproduce the electrical amplifier circuit (resistances, capacitors...) with a few changes and component additions. In order to adjust the gain of our circuit, we have replaced the resistance R2 by an MCP41050 digital potentiometer which can be controlled using the KY-040 rotary encoder. Then, for the realisation of the test bench we had to add some components that need to be connected to the power source, such as the flex sensor, the Bluetooth® module or the OLED screen. For that, we have created some symbols associated to the new elements. 
@@ -118,20 +124,27 @@ Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
 
 ///mettre image du circuit KiCAD \\\ 
 Then, the second part is to realise the footprint of the PCB on KiCAD. However, all the components and the whole circuit have to fit on Arduino Uno Shield. So, the spatial arrangement must be thoughtful, while considering the 3D shape of the components and the specifications we have to follow for the PCB printing. 
-For the most commons components, we've used some predefined footprints but for the others we've created some specifical footprints thanks to the software. 
-On the pictures below, it is possible to see the global footprint of our PCB and the 3D view. 
 
-## Amplifier circuit 
+For the most commons components, we've used some predefined footprints but for the others we've created some specifical footprints thanks to the software. On the pictures below, it is possible to see the global footprint of our PCB and the 3D view. 
+
+## Amplifier circuit
+
+### LTC1050 Operationnal amplifier
+
+### MCP41050 Digital potentiometer
 
 ## Graphite sensor
 
-/// Drawing of the sensor
- 
+## Flex sensor
+
+## KY-040 Rotary encoder
 
 ## OLED screen
-The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, bending sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
+
+The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, flex sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
 
 ## Rotary encoder
+
 
 # Android app
 
