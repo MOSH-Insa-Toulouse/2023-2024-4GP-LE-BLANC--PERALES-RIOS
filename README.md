@@ -25,7 +25,7 @@ This project covers the entire sensor field, right up to the development of a da
 
 [KiCAD PCB design](#kicad-pcb-design)
 
-[Amplifier circuit](#amplifier-circuit)
+[Amplifier circuit](##amplifier-circuit)
 
 [Graphite sensor](#graphite-sensor)
 
