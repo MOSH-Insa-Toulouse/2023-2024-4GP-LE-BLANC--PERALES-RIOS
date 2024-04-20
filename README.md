@@ -19,7 +19,7 @@ This project covers the entire sensor field, right up to the development of a da
 
 - [Principle of the measurement](#principle-of-the-measurement-for-the-graphite-and-flex-sensors)
 
-- [Necessary components for the project](#necessary-components)
+- [Necessary components and image of the project](#necessary-components-and-image-of-the-project)
 
 - [Overview of the project](#overview-of-the-project)
 
@@ -35,6 +35,7 @@ This project covers the entire sensor field, right up to the development of a da
 
 - [Test Bench](#test-bench)
 
+
 # Principle of the measurement for the graphite and flex sensors
 
 For the graphite and the flex sensors, let’s imagine they were a 2D layer of atoms to which we could apply tension and compression. This 2D layer of atoms would have a mean distance per atom depending on the atomic arrangement. The greater these mean distance between atoms is, the more difficult it is for an electron to “jump” from one atom to another, and vice versa. When these electron “jumps” are coordinated following the same direction (for example when we apply a potential difference between the two extremes of the 2D plane), we can say that an electric current is present.
@@ -49,7 +50,8 @@ We can see in Figure 1 how the compressive and tensile forces affect the geometr
 
 Figure 1: Principle of the resistance measurement for the graphite and flex sensors. Extracted from “Pencil Drawn Strain Gauges and Chemiresistors on Paper”, by Cheng-Wei et al.
 
-# Necessary components and schematic of the project
+
+# Necessary components and image of the project
 
 To carry out this project, we needed: 
   - 1 graphite-based paper sensor
@@ -63,7 +65,30 @@ To carry out this project, we needed:
   - Resistances
   - Capacitors
 
-# Overview of the project
+(Insert image of the finished PCB)
+
+
+# Division of the project in its main components: functioning and overview
+
+## Amplifier circuit
+
+### LTC1050 Operationnal amplifier
+
+### MCP41050 Digital potentiometer
+
+## Graphite sensor
+
+## Flex sensor
+
+## KY-040 Rotary encoder
+
+/// Drawing of the sensor
+ 
+
+## OLED screen
+The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, bending sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
+
+## Rotary encoder
 
 
 
