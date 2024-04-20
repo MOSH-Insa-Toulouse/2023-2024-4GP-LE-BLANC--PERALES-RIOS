@@ -16,6 +16,9 @@ As such, this project will cover the entire sensor field, right up to the develo
 
 ## Necessary components
 
+![image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/e09f9792-94ed-4ead-b8e5-c1036656262b)
+
+
 To carry out this project, we needed : 
   - 1 graphite-based sensor
   - 1 flex sensor
