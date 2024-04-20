@@ -82,7 +82,7 @@ First of all, we had to reproduce the electrical amplifier circuit (resistances,
 
 On the picture below, it is possible to see our complete electrical circuit realised in KiCAD with the different symbols of the components. 
 
-![Imagen3](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/d0222252-2c63-4f89-aab1-a1b74a817181)
+![Sin título](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/1b37a927-f7b1-49af-b2a8-71a55339fa15)
 
 Figure 2 : Complete schematic of the electrical circuit in KiCAD for the project.
 
