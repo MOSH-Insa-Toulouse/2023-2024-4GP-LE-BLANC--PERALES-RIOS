@@ -3,7 +3,7 @@
 
 4GP graphene-based sensor project
 
-## Introduction
+# Introduction
 The aim of this project is to study a graphite-based low-tech sensor, based on the publication "Pencil Drawn Strain Gauges and Chemiresistors on Paper" by Cheng-Wei Lin*, Zhibo Zhao*, Jaemyung Kim & Jiaxing Huang, published on Nature in 2014.
 
 According to this research, graphite particles, deposited by coloring a sensor trace, can act as strain gauges. These strain gauges can then be used to measure resistances of the order of the Giga-ohm (10E9 Ohms), for a much cheaper price than buying a multimeter able to measure this order of resistance.
@@ -26,16 +26,16 @@ This project covers the entire sensor field, right up to the development of a da
 - [KiCAD PCB design](#kicad-pcb-design)
 
     - [Amplifier circuit](#amplifier-circuit)
-
-- [Graphite sensor](#graphite-sensor)
-
-- [OLED screen](#oled-screen)
+    - [Graphite sensor](#graphite-sensor)
+    - [OLED screen](#oled-screen)
+    - [Rotary encoder](#rotary-encoder)
+      
 
 - [Android App](#android-app)
 
 - [Test Bench](#test-bench)
 
-## Principle of the measurement for the graphite and flex sensors
+# Principle of the measurement for the graphite and flex sensors
 
 For the graphite and the flex sensors, let’s imagine they were a 2D layer of atoms to which we could apply tension and compression. This 2D layer of atoms would have a mean distance per atom depending on the atomic arrangement. The greater these mean distance between atoms is, the more difficult it is for an electron to “jump” from one atom to another, and vice versa. When these electron “jumps” are coordinated following the same direction (for example when we apply a potential difference between the two extremes of the 2D plane), we can say that an electric current is present.
 
@@ -50,7 +50,7 @@ We can see in Figure 1 how the compressive and tensile forces affect the geometr
 Figure 1: Principle of the resistance measurement for the graphite and flex sensors. Extracted from “Pencil Drawn Strain Gauges and Chemiresistors on Paper”, by Cheng-Wei et al.
 
 
-## Necessary components and schematic of the project
+# Necessary components and schematic of the project
 
 To carry out this project, we needed: 
   - 1 graphite-based paper sensor
@@ -64,17 +64,19 @@ To carry out this project, we needed:
   - Resistances
   - Capacitors
 
-## Overview of the project circuit
+# Overview of the project circuit
 
 ## Amplifier circuit 
 
-### Graphite sensor
+## Graphite sensor
 
 /// Drawing of the sensor
  
 
 ## OLED screen
 The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, bending sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
+
+## Rotary encoder
 
 #### Potentiometer menu :
 In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
