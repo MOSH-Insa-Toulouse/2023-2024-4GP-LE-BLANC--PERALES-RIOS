@@ -14,15 +14,14 @@ Description of the project:
     the .aia file to the smartphone via a QR code.
 */
 
-// Definition of the libraries used in the code
+// LIBRARIES
 #include <Adafruit_SSD1306.h>
+#include <SoftwareSerial.h>
 #include <SPI.h>
 
+//--------------------------------------- PARAMETER DEFINITION ---------------------------------------------------
 
-// Parameter definition
-/////////////////////////////////////////////////////////////////////////
-
-// We define the value of the pins
+// PINS: defining their values and other parameters
 #define encoderPinA 2                   // CLK Output A
 #define encoderPinB 4                   // DT Output B
 #define Switch 5                        // Switch connection
@@ -33,70 +32,102 @@ Description of the project:
 #define MCP_NOP 0b00000000              // Parameters for the digital potentiometer
 #define MCP_WRITE 0b00010001
 #define MCP_SHTDWN 0b00100001
+#define rxPin 9                        // Pin 9 as RX, connecto to TX in the HC-05
+#define txPin 8                        // Pin 8 as TX, connecto to RX in the HC-05
+#define baudrate 9600                 // Chosen baudrate for the Bluetooth, to avoid bugs
 
+// OLED SCREEN AND BLUETOOTH MODULE: declaring the associated objects
 Adafruit_SSD1306 ecranOLED(nombreDePixelsEnLargeur, nombreDePixelsEnHauteur, &Wire, brocheResetOLED);
+SoftwareSerial mySerial(rxPin, txPin);
+char data_[] = {}; 
 
-// Constants and variables definition
-const int ssMCPin = 10;                 // Define the slave select for the digital potentiometer
-const int flexPin = A1;                 // pin connected to voltage divider output
-const float VCC = 5.0;                  // voltage at Ardunio 5V line
-const float R_DIV = 56000.0;            // resistor used to create a voltage divider
-const float flatResistance = 31000.0;   // resistance when flat
-const float bendResistance = 67000.0;   // resistance at 90 deg bending
-volatile long encoderValue = 0;
-volatile long encoderValue2 = 0;
+// GRPAHITE SENSOR: constants and variables definition
+float range = pow(10,-6);               // To have MOhms
+float Vadc = 0.0;
+float R1 = 100000.0;
+float R3 = 100000.0;
+float R5 = 10000.0;
+float Rc = 0.0;                         // Resistance of the graphite sensor
 
-int switchState;                        // the current reading from the input pin
-int lastSwitchState = HIGH;             // the previous reading from the input pin (switch is HIGH when we don't press)
-long lastEncoderValue = 0;              // used for the selection of the menu
-long lastValue = 0;                     // used for the digital potentiometer
-long lastDebounceTime = 0;              // the last time the output pin was toggled
-long debounceDelay = 40;                // the debounce time; increase if the output flickers
+// FLEX SENSOR: constants and variables definition
+const int flexPin = A1;                 // Pin connected to voltage divider output
+const float VCC = 5.0;                  // Voltage at Ardunio 5V line
+const float R_DIV = 56000.0;            // Resistor used to create a voltage divider
+const float flatResistance = 31000.0;   // Resistance when flat
+const float bendResistance = 67000.0;   // Resistance at 90 deg bending
+float Rflex = 0.0;
+float angle = 0.0;
 
+// ROTARY ENCODER AND SWITCH BUTTON: variable definition
+int switchState;                        // The current reading from the switch pin
+int lastSwitchState = HIGH;             // The previous reading from the switch pin (switch is HIGH when we don't press)
+long lastEncoderValue = 0;              // Used for the selection of the menu
+long lastPotValue = 0;                  // Used for the digital potentiometer
+long lastDebounceTime = 0;              // The last time the output pin was toggled
+long debounceDelay = 40;                // The debounce time, increase if the output flickers
 bool button_pressed = false;            // This variable becomes true whenever the switch button is pressed, false otherwise
-bool MainMenu = true;                   // This bool is true when we are in the main menu, false otherwise. Useful to avoid bugs
-const char* menuItems[] = {"Potentiometer", "Flex Sensor", "Graphite Sensor"}; // Definition of menu items. We avoid using String, as they are memory-intensive, and we use a more C-style constant.
-const char* potentiometerItems[] = {"DigiPot (50k) setting", "Value R2:", "", "BACK"};                  // Definition of items in the potentiometer screen
-const char* flexItems[] = {"Flex sensor reading", "Resistance value:", "", "Bend angle:", "", "BACK"};  // Definition of items in the flex sensor screen
-int selectMenu = 0;                     // Menu items are defined from 0 to x (depending on the menu)
-int selectItem = 0;                     // Item selection in each menu
-float Rflex = 0; 
-float angle = 0; 
-float rWiper = 125;
-float max_value_pot = 50000;            // Maximum resistance for the digital potentiometer (we supposed here 100k)
-int valuePot = 15;                      // valeur initiale envoyée au potentiomètre
-float R2 = (10/256)*max_value_pot;      // We set up the value of the digital potentiometer at a default value
+volatile long encoderValue = 0;         // This variable will store the value of the rotary encoder for moving through the menus
+volatile long encoder_for_pot = 0;      // This variable will store the value of the rotary encoder for selecting the potentiometer resistance
 
-/////////////////////////////////////////////////////////////////////////
+// MENU DISPLAY: constants and variables definition
+bool mainMenu = true;                                                   // This bool is true when we are in the main menu, false otherwise. Useful to avoid bugs
+const char* menuItems[] = {"Potentiometer", "Flex Sensor",
+                           "Graphite Sensor"};                          // Definition of menu items. We avoid using String, as they are memory-intensive, and we use a more C-style constant.
+const char* potentiometerItems[] = {"DigiPot (50k) setting",
+                                    "Value R2:", "", "BACK"};           // Definition of items in the potentiometer screen
+const char* flexItems[] = {"Flex sensor reading", "Resistance value:",
+                            "", "Bend angle:", "", "BACK"};             // Definition of items in the flex sensor screen
+int selectMenu = 0;                                                     // Menu items are defined from 0 to x (depending on the menu)
+
+
+// DIGITAL POTENTIOMETER: constants and variables definition
+const int ssMCPin = 10;                               // Define the slave select for the digital potentiometer
+float rWiper = 125.0;
+float max_value_pot = 50000.0;                        // Maximum resistance for the digital potentiometer (we supposed here 100k)
+int valuePot = 100;                                   // valeur initiale envoyée au potentiomètre
+float R2 = (float(valuePot)/256.0)*max_value_pot;     // We set up the value of the digital potentiometer at a default value
+
+//----------------------------------------------------------------------------------------------------------------
 
 
 void setup() {
-    Serial.begin(9600);
-    pinMode(encoderPinA, INPUT); // Use internal pull-up resistors for the encoder
-    digitalWrite(encoderPinA, HIGH); // Turn on pull-up resistor
+    // ROTARY ENCODER AND SWITCH BUTTON
+    pinMode(encoderPinA, INPUT);        // Use internal pull-up resistors for the encoder
+    digitalWrite(encoderPinA, HIGH);    // Turn on pull-up resistor
     pinMode(encoderPinB, INPUT);
-    digitalWrite(encoderPinB, HIGH); // Turn on pull-up resistor
+    digitalWrite(encoderPinB, HIGH);    // Turn on pull-up resistor
     pinMode(Switch, INPUT);
-    digitalWrite(Switch, HIGH); // Turn on pull-up resistor
+    digitalWrite(Switch, HIGH);         // Turn on pull-up resistor
 
+    // DIGITAL POTENTIOMETER
     pinMode(ssMCPin, OUTPUT);
-    digitalWrite(ssMCPin, HIGH);          // SPI chip disabled
+    digitalWrite(ssMCPin, HIGH);        // SPI chip disabled
     SPI.begin();
 
-    attachInterrupt(0, updateEncoder, CHANGE);  // Whenever we turn the rotary encoder, an interruption occurs.
-    
+    // FLEX SENSOR
+    pinMode(flexPin, INPUT);
+
+    // BLUETOOTH MODULE
+    pinMode(rxPin, INPUT);
+    pinMode(txPin, OUTPUT);
+    mySerial.begin(baudrate);
+
+    // INTERRUPTION FOR THE ROTARY ENCODER
+    attachInterrupt(0, updateEncoder, CHANGE);
+
+    // OLED SCREEN SETUP
     if (!ecranOLED.begin(SSD1306_SWITCHCAPVCC, adresseI2CecranOLED))
         while (1); // If the screen doesn't start, the program stays blocked here forever
-        
-    pinMode(flexPin, INPUT);
     ecranOLED.clearDisplay();
     ecranOLED.setTextColor(SSD1306_WHITE);
+
+    // SERIAL COMMUNICATION INITIALIZATION
+    //Serial.begin(baudrate);
 }
 
 
-
 void loop() {
-    if (MainMenu) {
+    if (mainMenu) {
         displayMenu();
         updateSelectedItem(encoderValue, (sizeof(menuItems) / sizeof(menuItems[0])));
         switchButton();
@@ -105,14 +136,8 @@ void loop() {
         handleMenuItemSelection(selectMenu);
         switchButton();
     }
-    int ADCflex = analogRead(flexPin); // Flex sensor: read the ADC, and calculate voltage and resistance from it
-    float Vflex = (ADCflex / 1024.0) * VCC;
-    Rflex = R_DIV * (VCC / Vflex - 1.0); // Flex sensor: we calculate the approximate resistance value
-    angle = map(Rflex, flatResistance, bendResistance, 0, 90.0);  // Flex sensor: use the calculated resistance to estimate the 
-                                                                  // sensor's bend angle
-    delay(200); // We add a delay between loops for stability, while still having a responsive display
+    delay(100);                                             // We add a delay between loops for stability, while still having a responsive display
 }
-
 
 
 void displayMenu() {
@@ -121,45 +146,64 @@ void displayMenu() {
     if (i == selectMenu) {
       ecranOLED.setTextColor(SSD1306_BLACK, SSD1306_WHITE); // Highlight selected item
     } else {
-      ecranOLED.setTextColor(SSD1306_WHITE); // Regular color for other items
+      ecranOLED.setTextColor(SSD1306_WHITE);                // Regular color for other items
     }
-    ecranOLED.setCursor(0, i * 10); // Adjust position for each item
-    ecranOLED.print(menuItems[i]); // Print each element
+    ecranOLED.setCursor(0, i * 10);                         // Adjust position for each item
+    ecranOLED.print(menuItems[i]);                          // Print each element
   }
-  ecranOLED.display();
+  ecranOLED.display();                                      // Display all the elements from the buffer
 }
-
 
 
 void handleMenuItemSelection(int selectMenu) {
-  // Implement actions for each menu item
-  switch (selectMenu) { // For each case, if the switch button was pressed, we enter each menu respectively
-    case 0: // Potentiometer setting using a dedicated function 
-      selectItem = 0;
+  switch (selectMenu) {       // For each case, if the switch button was pressed, we enter each menu respectively
+    case 0:                   // Potentiometer setting using a dedicated function
       displayPotentiometer(valuePot);
-      updateSelectedItem(encoderValue, sizeof(potentiometerItems) / sizeof(potentiometerItems[0])); 
       break;
-    case 1: // Flex sensor reading and display using a dedicated function
-      selectItem = 0;
-      displayFlexSensor(); 
+    case 1:                   // Flex sensor reading and display using a dedicated function
+      displayFlexSensor();
       break;
-    case 2: // Graphite sensor reading and display using a dedicated function
-      selectItem = 0;
+    case 2:                   // Graphite sensor reading and display using a dedicated function
       displayGraphiteSensor();
       break;
-    default:
+    default:                  // In case a bug occurs with selectMenu, the code breaks here to avoid extra bugs
       break;
   }
 }
 
+
+void graphiteMeasure() {
+    /*
+    Calculation of the graphite sensor's resistance.
+    */
+
+    float V = analogRead(A0);
+    Serial.println("V: " + String(V));
+    Vadc = V*5.0/1024.0;           // Voltage value of the sensor
+    Serial.println("Vadc: " + String(Vadc));
+    Rc = ((R1*(1+R3/R2)*(VCC/Vadc))-R1-R5)*range;     // Conversion to resistance
+}
+
+
+void flexMeasure() {
+   /*
+   Calculation of the flex sensor's resistance.
+   */
+
+   int ADCflex = analogRead(flexPin);                               // Read the ADC, and calculate voltage and resistance from it
+   float Vflex = (ADCflex / 1024.0) * VCC;
+   Rflex = R_DIV * (VCC / Vflex - 1.0);                             // We calculate the approximate resistance value
+   angle = map(Rflex, flatResistance, bendResistance, 0, 90.0);     // Use the calculated resistance to estimate the sensor's bend angle
+}
 
 
 void updateEncoder() {
     /*
-    This function allows to control the menu when the rotary encoder is turned. This function takes as input the 
+    This function allows to control the menu when the rotary encoder is turned. This function takes as input the
     number of elements of each menu to modify the last element than can be selected accordingly.
     */
-    if (MainMenu){
+
+    if (mainMenu){
       if (digitalRead(encoderPinB) == HIGH) {
           encoderValue++;
       }
@@ -169,52 +213,51 @@ void updateEncoder() {
     }
     else if (selectMenu == 0) {
       if (digitalRead(encoderPinB) == HIGH) {
-          encoderValue2++;
+          encoder_for_pot++;
       }
       else {
-          encoderValue2--;
+          encoder_for_pot--;
       }
     }
 
 }
 
 void updatePotentiometerValue(){
-  if (encoderValue2 != lastValue) { // If we turn the encoder, then the selectedItem variable is increased
-      valuePot = valuePot + 10;
-      if (valuePot>255){
-        valuePot=0;
+  if (encoder_for_pot != lastPotValue) {  // If we turn the encoder, then the selectedItem variable is increased
+      valuePot = valuePot + 10;           // valuePot goes from 0 to 255. 255 corresponds to 50 kohms
+      if (valuePot > 255){
+        valuePot=0;                       // If valuePot is bigger than 255, we reset its value to 0
       }
   }
-  lastValue = encoderValue2; // The last value from the encoder is updated
+  lastPotValue = encoder_for_pot;         // The last value from the encoder is updated
   valuePot = constrain(valuePot, 0, 255);
 }
 
+
 void updateSelectedItem(int encoderValue, int NumberOfItems) {
-  encoderValue = abs(encoderValue % NumberOfItems); 
-  Serial.println(encoderValue); // To debug
-  if (encoderValue != lastEncoderValue) { // If we turn the encoder, then the selectedItem variable is increased
+  encoderValue = abs(encoderValue % NumberOfItems);
+  if (encoderValue != lastEncoderValue) {     // If we turn the encoder, then the selectedItem variable is increased
       selectMenu++;
       if (selectMenu == NumberOfItems) {
-          selectMenu = 0; // If we reach the last element from the menu, the selectedItem is reset to the first element
-      }  
-      Serial.println("Selected:" + String(selectMenu)); // To debug
+          selectMenu = 0;                     // If we reach the last element from the menu, the selectedItem is reset to the first element
+      }
   }
-  lastEncoderValue = encoderValue; // The last value from the encoder is updated
+  lastEncoderValue = encoderValue;            // The last value from the encoder is updated
 }
 
 
-void SPIWrite(uint8_t cmd, uint8_t data, uint8_t ssPin) {
+void SPIWrite(uint8_t cmd, uint8_t res, uint8_t ssPin) {
   /*
   This function controls the communication between the Arduino and the digital potentiometer
   */
 
   // https://www.arduino.cc/en/Reference/SPISettings
   updatePotentiometerValue();
-  R2 = ((max_value_pot * data) / 256 ) + rWiper;
+  R2 = ((max_value_pot * res) / 256 ) + rWiper;
   SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE0));
   digitalWrite(ssPin, LOW);   // SS pin low to select chip
   SPI.transfer(cmd);          // Send command code
-  SPI.transfer(data);         // Send associated value
+  SPI.transfer(res);          // Send associated value
   digitalWrite(ssPin, HIGH);  // SS pin high to de-select chip
   SPI.endTransaction();
 }
@@ -235,12 +278,11 @@ void switchButton() {
       button_pressed = true;
 
       // If we were in the main menu, switch to the menu item view
-      if (MainMenu) {
-        MainMenu = false;
-        selectItem = 0;
+      if (mainMenu) {
+        mainMenu = false;
       } else {
         // If we were in a menu item view, switch back to the main menu
-        MainMenu = true;
+        mainMenu = true;         
       }
     }
   } else {
@@ -250,6 +292,17 @@ void switchButton() {
 }
 
 
+void sendBluetooth(float data) {
+  /*
+  This function sends all the gathered data to the Bluetooth module, that transfers the data to a mobile phone through an Android app.
+  To separate the different data, we will use a pipe character ("|").
+  */
+  
+  dtostrf(data,6, 2, data_);
+  mySerial.println(data_ );               // Sending the data through Bluetooth
+  delay(50);                                  // Introducing a small delay for data transfer + stability
+}
+
 
 void displayPotentiometer(int valuePot) {
     /*
@@ -258,37 +311,40 @@ void displayPotentiometer(int valuePot) {
 
     ecranOLED.clearDisplay();
     SPIWrite(MCP_WRITE, valuePot, ssMCPin);
-    dtostrf(R2, 6, 2, potentiometerItems[2]);       // Update the value of the potentiometer resistance, which is set at the beginning at a default value
+    dtostrf(R2, 6, 2, potentiometerItems[2]);         // Update the value of the potentiometer resistance, which is set at the beginning at a default value
     for (int i = 0; i < sizeof(potentiometerItems) / sizeof(potentiometerItems[0]); i++) {
-        ecranOLED.setTextColor(SSD1306_WHITE); // Regular color for other items
-        ecranOLED.setCursor(0, i * 10); // Adjust position for each item
-        ecranOLED.print(potentiometerItems[i]); // Print each element
+        ecranOLED.setTextColor(SSD1306_WHITE);        // Regular color for other items
+        ecranOLED.setCursor(0, i * 10);               // Adjust position for each item
+        ecranOLED.print(potentiometerItems[i]);       // Print each element
     }
     switchButton();
     ecranOLED.display();
 }
 
 
-
 void displayFlexSensor() {
     ecranOLED.clearDisplay();
-    dtostrf(Rflex, 6, 2, flexItems[2]); // Update the values of the resistance and the angle of the flex sensor
+    flexMeasure();
+    dtostrf(Rflex, 6, 2, flexItems[2]);         // Update the values of the resistance and the angle of the flex sensor
     dtostrf(angle, 6, 2, flexItems[4]);
     for (int i = 0; i < sizeof(flexItems) / sizeof(flexItems[0]); i++) {
-        ecranOLED.setTextColor(SSD1306_WHITE); // Regular color for other items
-        ecranOLED.setCursor(0, i * 10); // Adjust position for each item
-        ecranOLED.print(flexItems[i]); // Print each element
+        ecranOLED.setTextColor(SSD1306_WHITE);  // Regular color for other items
+        ecranOLED.setCursor(0, i * 10);         // Adjust position for each item
+        ecranOLED.print(flexItems[i]);          // Print each element
     }
     switchButton();
+    sendBluetooth(Rflex); 
     ecranOLED.display();
 }
 
 
 void displayGraphiteSensor() {
     ecranOLED.clearDisplay();
-    ecranOLED.setTextColor(SSD1306_WHITE); // Regular color for other items
+    graphiteMeasure();
+    ecranOLED.setTextColor(SSD1306_WHITE);
     ecranOLED.setCursor(0, 0);
-    ecranOLED.print("Graphite sensor: " + String(5000) + "ohms");     
-    switchButton();
+    ecranOLED.print(Rc);
+    sendBluetooth(Rc);
+    switchButton();     
     ecranOLED.display();
 }
