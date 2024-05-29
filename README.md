@@ -45,10 +45,6 @@ On the other hand, when a tensile force is applied to the 2D layer of atoms, the
 We can see in Figure 1 how the compressive and tensile forces affect the geometry of the 2D plane. When generalizing the 2D plane to a 3D thin surface, the principle of the measurement stays the same.
 
 ![Imagen1](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/5d65b1fc-ff74-4581-843a-14737c406238)
-
-![pngimg com - padlock_PNG9399](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/a4f01d09-90fa-44f3-b086-60601fab1572)
-
-
 Figure 1: Principle of the resistance measurement for the graphite and flex sensors. Extracted from “Pencil Drawn Strain Gauges and Chemiresistors on Paper”, by Cheng-Wei et al.
 
 
@@ -69,26 +65,11 @@ To carry out this project, we needed:
 (Insert image of the finished PCB)
 
 
-# Division of the project in its main components: functioning and overview
-
-## Amplifier circuit
-
-
-
-### LTC1050 Operationnal amplifier
-
-### MCP41050 Digital potentiometer
-
-## Graphite sensor
-
-## Flex sensor
-
-## KY-040 Rotary encoder
+# Overview of the Arduino Code
 
 
 ## OLED screen
 
-The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, flex sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
 
 ### Potentiometer menu
 
@@ -108,7 +89,6 @@ In this menu, the user can see the current value of the graphite sensor. The use
 
 (Insert photo of the menu)
 
-## Rotary encoder
 
 
 # KiCAD PCB design
@@ -141,22 +121,28 @@ Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
 
 The LTC1050 is the operationnal amplifier used in our amplifier circuit. 
 
-
-
 ### MCP41050 Digital potentiometer
+
+The MCP41050 is the digital potentiometer used in our project. It varies up to 50,000 ohms depending on the command sent.
+It has 8 connections pins as you can see on the next figure. 
 
 ## Graphite sensor
 
+The graphite sensor used in our project is made from paper with a trace to be colored in with different pencils. 
+In our electrical circuit, the sensor is connected between the 5V source and the positive input of the amplifier. 
+
 ## Flex sensor
+
+The flex sensor, used for comparing the graphite-sensor measures, is mounted in a voltage divider bridge. 
 
 ## KY-040 Rotary encoder
 
+The rotary encoder is a main part of our project. It allows the user to change the selected menu, enter and exit menus by turning or pressing the encoder.
+The rotary encoder has 5 pins connected to differents parts of the shield, as you can see on the figure below.  
+
 ## OLED screen
 
-The main page of the OLED screen has 3 different menus: Setting digital potentiometer values, flex sensor values and graphene-based sensor values. The user can select the menu using the rotary encoder. By turning the knob, the user can select the different drop-down menus and by pressing the knob, the user enters a specific menu. 
-
-## Rotary encoder
-
+On the Arduino shield, the OLED screen is connected to 4 pins, as you can see on the figure below. 
 
 # Android app
 
