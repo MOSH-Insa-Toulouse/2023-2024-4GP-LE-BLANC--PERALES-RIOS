@@ -46,6 +46,9 @@ We can see in Figure 1 how the compressive and tensile forces affect the geometr
 
 ![Imagen1](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/5d65b1fc-ff74-4581-843a-14737c406238)
 
+![pngimg com - padlock_PNG9399](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/a4f01d09-90fa-44f3-b086-60601fab1572)
+
+
 Figure 1: Principle of the resistance measurement for the graphite and flex sensors. Extracted from “Pencil Drawn Strain Gauges and Chemiresistors on Paper”, by Cheng-Wei et al.
 
 
