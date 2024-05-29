@@ -78,7 +78,7 @@ The main role of the amplifier is to amplify sensor output voltages to make them
 On the figure below, you can see its electrical circuit.
 
 ![image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/22b4074c-a6f3-46b2-91a8-3a7a4a72a47d)
-
+Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
 
 ### LTC1050 Operationnal amplifier
 
@@ -128,11 +128,7 @@ On the picture below, it is possible to see our complete electrical circuit real
 
 Figure 2 : Complete schematic of the electrical circuit in KiCAD for the project.
 
-![Sin título](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/92e3f787-637e-4297-bfe6-bed382c1b954)
 
-Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
-
-///mettre image du circuit KiCAD \\\ 
 Then, the second part is to realise the footprint of the PCB on KiCAD. However, all the components and the whole circuit have to fit on Arduino Uno Shield. So, the spatial arrangement must be thoughtful, while considering the 3D shape of the components and the specifications we have to follow for the PCB printing. 
 
 For the most commons components, we've used some predefined footprints but for the others we've created some specifical footprints thanks to the software. On the pictures below, it is possible to see the global footprint of our PCB and the 3D view. 
