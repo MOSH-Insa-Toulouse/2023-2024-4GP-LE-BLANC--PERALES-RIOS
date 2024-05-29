@@ -73,12 +73,7 @@ To carry out this project, we needed:
 
 ## Amplifier circuit
 
-The main role of the amplifier is to amplify sensor output voltages to make them measurable.
 
-On the figure below, you can see its electrical circuit.
-
-![image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/22b4074c-a6f3-46b2-91a8-3a7a4a72a47d)
-Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
 
 ### LTC1050 Operationnal amplifier
 
@@ -135,7 +130,18 @@ For the most commons components, we've used some predefined footprints but for t
 
 ## Amplifier circuit
 
+The main role of the amplifier is to amplify sensor output voltages to make them measurable.
+
+On the figure below, you can see its electrical circuit.
+
+![image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/22b4074c-a6f3-46b2-91a8-3a7a4a72a47d)
+Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
+
 ### LTC1050 Operationnal amplifier
+
+The LTC1050 is the operationnal amplifier used in our amplifier circuit. 
+
+
 
 ### MCP41050 Digital potentiometer
 
