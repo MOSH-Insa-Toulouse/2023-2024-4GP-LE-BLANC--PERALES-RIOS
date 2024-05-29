@@ -62,7 +62,7 @@ To carry out this project, we needed:
   - Resistances
   - Capacitors
 
-(Insert image of the finished PCB)
+![PCB_complet](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/649935e4-a762-47ec-a7d6-bdfd1e432b26)
 
 
 # Overview of the Arduino Code
@@ -142,6 +142,9 @@ The flex sensor, used for comparing the graphite-sensor measures, is mounted in 
 
 The rotary encoder is a main part of our project. It allows the user to change the selected menu, enter and exit menus by turning or pressing the encoder.
 The rotary encoder has 5 pins connected to differents parts of the shield, as you can see on the figure below.  
+
+![Encodeur_rotatoire](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/90a1ef97-2f27-425b-9fdc-b9fd0d33ee21)
+
 
 ## OLED screen
 
