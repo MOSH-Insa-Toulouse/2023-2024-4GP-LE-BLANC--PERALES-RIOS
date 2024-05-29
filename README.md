@@ -115,6 +115,7 @@ The main role of the amplifier is to amplify sensor output voltages to make them
 On the figure below, you can see its electrical circuit.
 
 ![image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/22b4074c-a6f3-46b2-91a8-3a7a4a72a47d)
+
 Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
 
 ### LTC1050 Operationnal amplifier
@@ -130,6 +131,8 @@ It has 8 connections pins as you can see on the next figure.
 
 The graphite sensor used in our project is made from paper with a trace to be colored in with different pencils. 
 In our electrical circuit, the sensor is connected between the 5V source and the positive input of the amplifier. 
+
+(Diagram of the sensor used in the project).
 
 ## Flex sensor
 
@@ -148,4 +151,14 @@ On the Arduino shield, the OLED screen is connected to 4 pins, as you can see on
 
 # Test bench
 
-(Diagram of the sensor used in the project). It will be filled in using different types of pencil.
+The last part of our project was to realize the test bench to acquire the datas from our sensors. 
+
+To realize the measures, we have decided to use a test bench consisting of half-cylinders of different diameters, as you can see on the next figure.
+
+// image bench test\\
+
+We have tested 5 graphite-sensors, each made with a different type of pencil : 3B, 2B, B, H, 2H. 
+To carry out the measurements, we placed the sensors on the various cylinders, in tension and compression. This enabled us to measure differences in resistance as a function of pencil type and deformation. 
+
+The main results are described and presented in the graphite sensors' datasheet. 
+
