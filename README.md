@@ -138,6 +138,9 @@ In our electrical circuit, the sensor is connected between the 5V source and the
 
 The flex sensor, used for comparing the graphite-sensor measures, is mounted in a voltage divider bridge. 
 
+![Flex_sensor](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/57c77a8c-33ca-4d10-ae2a-ecce92d62feb)
+
+
 ## KY-040 Rotary encoder
 
 The rotary encoder is a main part of our project. It allows the user to change the selected menu, enter and exit menus by turning or pressing the encoder.
