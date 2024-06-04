@@ -74,7 +74,7 @@ To carry out this project, we needed:
 
 # Arduino code
 
-
+The Arduino code is able to store 
 ## OLED screen
 
 
