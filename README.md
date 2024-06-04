@@ -20,7 +20,7 @@ This project covers the entire sensor field, right up to the development of a da
 
 - [Physics behind the resistance change in the graphite and the flex sensors](#physics-behind-the-resistance-change-in-the-graphite-and-the-flex-sensors)
 
-- [Necessary components and image of the project](#necessary-components-and-image-of-the-project)
+- [Necessary components and image of the finished Arduino shield](#necessary-components-and-image-of-the-finished-arduino-shield)
 
 - [Overview of the project](#overview-of-the-project)
 
@@ -55,7 +55,7 @@ We can see in Figure 1 how the compressive and tensile forces affect the geometr
 Figure 1: Principle of the resistance measurement for the graphite and flex sensors. Extracted from “Pencil Drawn Strain Gauges and Chemiresistors on Paper”, by Cheng-Wei et al.
 
 
-# Necessary components and image of the project
+# Necessary components and image of the finished Arduino shield
 
 To carry out this project, we needed: 
   - 1 graphite-based paper sensor
