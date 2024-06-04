@@ -22,7 +22,7 @@ This project covers the entire sensor field, right up to the development of a da
 
 - [Necessary components and image of the finished Arduino shield](#necessary-components-and-image-of-the-finished-arduino-shield)
 
-- [Arduino code for the project: an overview](#arduino-code-for-the-project--:--an-overview)
+- [Arduino code](#arduino-code)
 
 - [KiCAD PCB design](#kicad-pcb-design)
 
@@ -72,7 +72,7 @@ To carry out this project, we needed:
 ![PCB_complet](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/649935e4-a762-47ec-a7d6-bdfd1e432b26)
 
 
-# Arduino code for the project: an overview
+# Arduino code
 
 
 ## OLED screen
