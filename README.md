@@ -79,11 +79,6 @@ The logic behind the Arduino program can be found in the logic chart below.
 ![bP9DRXin34RtEWMHLN85UvFunudH6WtgvW2CXl2ebIX1efAwHUzUIPunCi1iiZ3WaSZtFWgyJu9HihDAZ5Y2v-X_ae3689IZKkrQgSMH98UbMkpPY45h_X1exu9dOac0t44md4h1WmZg7eYrxoY2OQ4OSv1fxxUlsqthIXJBKMMvp4QZ6CzBfTvxOmbk7He-4ESxC0bkpvJk5C1YOr (1)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/8321e4d1-a773-4e3a-b967-f35e9f0d8d79)
 
 
-
-
-
-
-
 ### Potentiometer menu
 
 In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
