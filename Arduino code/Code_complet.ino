@@ -299,7 +299,7 @@ void sendBluetooth(float data) {
   */
   
   dtostrf(data,6, 2, data_);
-  mySerial.println(data_ );               // Sending the data through Bluetooth
+  mySerial.println(data_ );                   // Sending the data through Bluetooth
   delay(50);                                  // Introducing a small delay for data transfer + stability
 }
 
