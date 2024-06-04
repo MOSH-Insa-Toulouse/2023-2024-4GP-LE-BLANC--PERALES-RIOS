@@ -34,7 +34,7 @@ Description of the project:
 #define MCP_SHTDWN 0b00100001
 #define rxPin 9                        // Pin 9 as RX, connecto to TX in the HC-05
 #define txPin 8                        // Pin 8 as TX, connecto to RX in the HC-05
-#define baudrate 9600                 // Chosen baudrate for the Bluetooth, to avoid bugs
+#define baudrate 9600                  // Chosen baudrate for the Bluetooth, to avoid bugs
 
 // OLED SCREEN AND BLUETOOTH MODULE: declaring the associated objects
 Adafruit_SSD1306 ecranOLED(nombreDePixelsEnLargeur, nombreDePixelsEnHauteur, &Wire, brocheResetOLED);
