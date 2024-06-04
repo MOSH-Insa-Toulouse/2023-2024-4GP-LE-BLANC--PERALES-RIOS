@@ -1,4 +1,3 @@
-![Graphite_sensor](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/3f6b1954-13ad-4e0e-a8d6-71d2c4a7cb43)# 4GP 2023-2024 "Projet capteur"
 # Students : Maël LE BLANC, Daniel PERALES RIOS
 
 4GP graphene-based sensor project
