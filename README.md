@@ -22,7 +22,7 @@ This project covers the entire sensor field, right up to the development of a da
 
 - [Necessary components and image of the finished Arduino shield](#necessary-components-and-image-of-the-finished-arduino-shield)
 
-- [Arduino code for the project: an overview](#arduino-code-for-the-project:-an-overview)
+- [Arduino code for the project: an overview](#arduino-code-for-the-project-:-an-overview)
 
 - [KiCAD PCB design](#kicad-pcb-design)
 
