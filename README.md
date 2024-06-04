@@ -1,4 +1,4 @@
-# 4GP 2023-2024 "Projet capteur"
+![Graphite_sensor](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/3f6b1954-13ad-4e0e-a8d6-71d2c4a7cb43)# 4GP 2023-2024 "Projet capteur"
 # Students : Maël LE BLANC, Daniel PERALES RIOS
 
 4GP graphene-based sensor project
@@ -78,25 +78,26 @@ The logic behind the Arduino program can be found in the logic chart below.
 
 ![bP9DRXin34RtEWMHLN85UvFunudH6WtgvW2CXl2ebIX1efAwHUzUIPunCi1iiZ3WaSZtFWgyJu9HihDAZ5Y2v-X_ae3689IZKkrQgSMH98UbMkpPY45h_X1exu9dOac0t44md4h1WmZg7eYrxoY2OQ4OSv1fxxUlsqthIXJBKMMvp4QZ6CzBfTvxOmbk7He-4ESxC0bkpvJk5C1YOr (1)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/8321e4d1-a773-4e3a-b967-f35e9f0d8d79)
 
+The is a main menu with three options, and the user can choose between each of these three options: the potentiometer, the flex sensor and the graphite sensor.
 
 ### Potentiometer menu
 
 In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
 
-(Insert photo of the menu)
+![IMG_1833](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/c86bfd6d-c473-4c29-aedd-c9c60b768446)
 
 ### Flex sensor menu
 
 In this menu, the value of the resistance and the value of the angle of the flex sensor are displayed.  
 
-(Insert photo of the menu)
+![IMG_1834](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/1083f118-864a-41ad-b2f6-cd2d5c15ebec)
+
 
 ### Grpahite sensor menu
 
 In this menu, the user can see the current value of the graphite sensor. The user exits to the main menu by pressing the encoder button.
 
-(Insert photo of the menu)
-
+![IMG_1835](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/0f888522-1073-4606-b248-1ee0906b1bc2)
 
 
 # KiCAD PCB design
@@ -124,23 +125,32 @@ On the figure below, you can see its electrical circuit.
 
 ![image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/22b4074c-a6f3-46b2-91a8-3a7a4a72a47d)
 
-Figure 3: Schematic of the operationnal amplifier circuit in KiCAD
+Figure 3: Schematic of the operationnal amplifier circuit in KiCAD.
 
 ### LTC1050 Operationnal amplifier
 
 The LTC1050 is the operationnal amplifier used in our amplifier circuit. 
+
+![DIP-8](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/9779b100-5de5-48d5-8db4-3b4e4fddeefa)
+
 
 ### MCP41050 Digital potentiometer
 
 The MCP41050 is the digital potentiometer used in our project. It varies up to 50,000 ohms depending on the command sent.
 It has 8 connections pins as you can see on the next figure. 
 
+![Microchip-MCP41050-I_SN-image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/a2f528a6-c030-491e-9876-67a0d771acc9)
+
+
 ## Graphite sensor
 
 The graphite sensor used in our project is made from paper with a trace to be colored in with different pencils. 
 In our electrical circuit, the sensor is connected between the 5V source and the positive input of the amplifier. 
 
-(Diagram of the sensor used in the project).
+![Graphite_sensor](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/16bf690d-2f42-4ac8-a104-3a38da477129)
+
+Extracted from Niels Brun and Paul Besnard's GitHub site.
+
 
 ## Flex sensor
 
@@ -167,12 +177,21 @@ On the Arduino shield, the OLED screen is connected to 4 pins, as you can see on
 
 The last part of our project was to realize the test bench to acquire the datas from our sensors. 
 
-To realize the measures, we have decided to use a test bench consisting of half-cylinders of different diameters, as you can see on the next figure.
+To realize the measures, we have decided to use a test bench consisting of half-cylinders going from 2 to 5 cm in diameter, with jumps of 0.5 cm in between each half-cylinder, as you can see on the next figure.
 
-// image bench test\\
+![Bench_test](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/e06a162e-13c2-42fb-a930-fb24063e44d7)
 
 We have tested 5 graphite-sensors, each made with a different type of pencil : 3B, 2B, B, H, 2H. 
 To carry out the measurements, we placed the sensors on the various cylinders, in tension and compression. This enabled us to measure differences in resistance as a function of pencil type and deformation. 
 
+![Deformation_tension](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/5b5fe1e5-2fde-4161-aca8-79e347c75b0c)
+
+![Deformation_compression](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/ebaba703-e45a-429a-bacf-cb0fce856f94)
+
+
+![Deformation_tension_flex](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/c671544d-74f5-486a-b064-83e683de38e2)
+
 The main results are described and presented in the graphite sensors' datasheet. 
+
+For any question concerning our sensor project, please contact: perales@insa-toulouse.fr / m_leblan@insa-toulouse.fr
 
