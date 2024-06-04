@@ -16,6 +16,8 @@ Finally, we have mounted all the sensors in a PCB we have built from scratch usi
 
 This project covers the entire sensor field, right up to the development of a datasheet and test bench for this sensor.
 
+- [Deliverables](#deliverables)
+
 - [Principle of the measurement](#principle-of-the-measurement-for-the-graphite-and-flex-sensors)
 
 - [Necessary components and image of the project](#necessary-components-and-image-of-the-project)
