@@ -1,4 +1,6 @@
-# Students : Maël LE BLANC, Daniel PERALES RIOS
+# Graphite-based sensor project
+
+## Students : Maël LE BLANC, Daniel PERALES RIOS
 
 4GP graphene-based sensor project
 
