@@ -18,7 +18,7 @@ This project covers the entire sensor field, right up to the development of a da
 
 - [Deliverables](#deliverables)
 
-- [Principle of the measurement](#principle-of-the-measurement-for-the-graphite-and-flex-sensors)
+- [Physics behind the resistance change in the graphite and the flex sensors](#physics-behind-the-resistance-change-in-the-graphite-and-the-flex-sensors)
 
 - [Necessary components and image of the project](#necessary-components-and-image-of-the-project)
 
@@ -41,7 +41,7 @@ The deliverables for this project are an Arduino shield with its associated Ardu
 
 To write the datasheet, a bench test must be used or built. In our project, we have used a bench test that was already at the department and that was perfect for our case.
 
-# Principle of the measurement for the graphite and flex sensors
+# Physics behind the resistance change in the graphite and the flex sensors
 
 For the graphite and the flex sensors, let’s imagine they were a 2D layer of atoms to which we could apply tension and compression. This 2D layer of atoms would have a mean distance per atom depending on the atomic arrangement. The greater these mean distance between atoms is, the more difficult it is for an electron to “jump” from one atom to another, and vice versa. When these electron “jumps” are coordinated following the same direction (for example when we apply a potential difference between the two extremes of the 2D plane), we can say that an electric current is present.
 
