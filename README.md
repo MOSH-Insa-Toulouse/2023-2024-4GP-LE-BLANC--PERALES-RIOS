@@ -2,7 +2,8 @@
 
 ## Students : Maël LE BLANC, Daniel PERALES RIOS
 
-4GP graphene-based sensor project
+Département de Génie Physique
+Institut National des Sciences Appliquées de Toulouse
 
 # Introduction
 The aim of this project is to study a graphite-based low-tech sensor, based on the publication "Pencil Drawn Strain Gauges and Chemiresistors on Paper" by Cheng-Wei Lin, Zhibo Zhao, Jaemyung Kim & Jiaxing Huang, published on Nature in 2014.
