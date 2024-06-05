@@ -1,0 +1,1 @@
+This logo was adapted from a figure on the paper from Cheng-Wei et al. "Pencil Drawn Strain Gauges and Chemiresistors on Paper".
