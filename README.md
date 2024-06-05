@@ -26,15 +26,15 @@ This project covers the entire sensor field, right up to the development of a da
 - [Necessary components and image of the finished project](#necessary-components-and-image-of-the-finished-project)
 
 - [Arduino code](#arduino-code)
+  
     - [Potentiometer menu](#potentiometer-menu)
-    - [Graphite sensor](#graphite-sensor)
-    - [OLED screen](#oled-screen)
-    - [Rotary encoder](#rotary-encoder)
+    - [Flex sensor menu](#flex-sensor-menu)
+    - [Graphite sensor menu](#graphite-sensor-menu)
 
 - [KiCAD PCB design](#kicad-pcb-design)
 
     - [Amplifier circuit](#amplifier-circuit)
-    - [Graphite sensor](#graphite-sensor)
+    - [LTC1050 Operationnal amplifier](#ltc1050-operationnal-amplifier)
     - [OLED screen](#oled-screen)
     - [Rotary encoder](#rotary-encoder)
       
@@ -149,7 +149,7 @@ On figure 8 can be seen the electrical circuit of the amplifier.
 
 Figure 8: Schematic of the operationnal amplifier circuit in KiCAD.
 
-### LTC1050 Operationnal amplifier
+## LTC1050 Operationnal amplifier
 
 The LTC1050 is the operationnal amplifier used in our amplifier circuit, than can be observed in figure 9.
 
@@ -157,7 +157,7 @@ The LTC1050 is the operationnal amplifier used in our amplifier circuit, than ca
 
 Figure 9: LTC1050 operational amplifier.
 
-### MCP41050 Digital potentiometer
+## MCP41050 Digital potentiometer
 
 The MCP41050 is the digital potentiometer used in our project. It varies up to 50,000 ohms depending on the command sent.
 It has 8 connections pins as can be seen in figure 10. 
