@@ -199,27 +199,62 @@ Figure 14: The OLED screen, with 4 pins.
 
 # Android app
 
+The Android app has been coded using MIT's app inventor. In figures 15, 16 can be seen the code blocks for the Android app. 
 
+![Code_blocks_app (1)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/1a01e3fb-8526-4573-971d-22bba30600ec)
+
+![Code_blocks_app (2)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/e7ef99da-4fc3-4af5-a332-3d98066dadcd)
+
+Figure 15: Code blocks for the Android app. 
+
+Moreover, we have coded an improved version of the program with a login function, whose code appears in figure 16.
+
+![Code_blocks_app_with_login (1)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/9a0fd5f0-699d-4b53-a44a-c031073ffaeb)
+
+![Code_blocks_app_with_login (2)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/bd2f84ec-7919-46e4-9384-131d989c585e)
+
+Figure 16: Code blocks for the Android app with the login function.
+
+Next, in figures 17 and 18 are presented the data capture screen and the login screen, respectively.
+
+![App_screen](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/e0e7354a-53f9-485d-a92e-41cd40fe97f5)
+
+Figure 17: Data capture screen.
+
+![App_screen_with_login](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/0c334be4-91e5-4867-9e5b-5f8786bf9b32)
+
+Figure 18: Login screen.
 
 # Test bench
 
-The last part of our project was to realize the test bench to acquire the datas from our sensors. 
+The last part of our project was to realize the test bench to acquire the data from our sensors. 
 
-To realize the measures, we have decided to use a test bench consisting of half-cylinders going from 2 to 5 cm in diameter, with jumps of 0.5 cm in between each half-cylinder, as you can see on the next figure.
+To realize the measures, we have decided to use a test bench consisting of semi-cylinders going from 2 to 5 cm in diameter, with steps of 0.5 cm in between each semi-cylinder, as you can see on figure 19.
 
 ![Bench_test](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/e06a162e-13c2-42fb-a930-fb24063e44d7)
 
+Figure 19: Test bench used.
+
 We have tested 5 graphite-sensors, each made with a different type of pencil : 3B, 2B, B, H, 2H. 
-To carry out the measurements, we placed the sensors on the various cylinders, in tension and compression. This enabled us to measure differences in resistance as a function of pencil type and deformation. 
+To carry out the measurements, we placed the sensors on the various cylinders, in tension and compression, as can be seen respectively in figures 20 and 21. This enabled us to measure differences in resistance as a function of pencil type and deformation. 
 
 ![Deformation_tension](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/5b5fe1e5-2fde-4161-aca8-79e347c75b0c)
 
+Figure 20: Deformation in tension.
+
 ![Deformation_compression](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/ebaba703-e45a-429a-bacf-cb0fce856f94)
 
+Figure 21: Deformation in compression.
+
+In figure 22 the results for the flex sensor in tension are showed. 
 
 ![Deformation_tension_flex](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/c671544d-74f5-486a-b064-83e683de38e2)
 
-The main results are described and presented in the graphite sensors' datasheet. 
+Figure 22: Results for the flex sensor, in tension.
+
+The complete results are described and presented in the graphite sensors' datasheet, available in the Datasheet folder.
+
+With our results it is found that the softer the pencil is (in our case, 3B is the softer pencil), the less sensitive it is. This is the same conclusion, saving the distance, of Wei et al. in “Pencil Drawn Strain Gauges and Chemiresistors on Paper”.
 
 For any question concerning our sensor project, please contact: perales@insa-toulouse.fr / m_leblan@insa-toulouse.fr
 
