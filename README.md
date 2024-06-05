@@ -57,15 +57,16 @@ On the one hand, when a compression force is applied to that 2D layer of atoms, 
 
 On the other hand, when a tensile force is applied to the 2D layer of atoms, the atoms would get further apart from each other, thus increasing the mean distance per atom, making the electron “jumps” less favorable, and increasing the resistance. 
 
-We can see in Figure 1 how the compressive and tensile forces affect the geometry of the 2D plane. When generalizing the 2D plane to a 3D thin surface, the principle of the measurement stays the same.
+We can see in figure 1 how the compressive and tensile forces affect the geometry of the 2D plane. When generalizing the 2D plane to a 3D thin surface, the principle of the measurement stays the same.
 
 ![Imagen1](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/5d65b1fc-ff74-4581-843a-14737c406238)
+
 Figure 1: Principle of the resistance measurement for the graphite and flex sensors. Extracted from “Pencil Drawn Strain Gauges and Chemiresistors on Paper”, by Cheng-Wei et al.
 
 
 # Necessary components and image of the finished project
 
-In figure 2, the finished project, with all the components mounted on the shield, is showed. 
+In figure 2, the finished project, with all the components mounted on the shield, is showed. The only component that not mounted in the shield is the Bluetooth module, since what we thought to be a connection error was blocking the Arduino code from running.
 
 To carry out this project, we needed: 
   - 1 graphite-based paper sensor
@@ -80,15 +81,18 @@ To carry out this project, we needed:
   - Capacitors
 
 ![PCB_complet](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/649935e4-a762-47ec-a7d6-bdfd1e432b26)
-Figure 2: Image of the complete project.
+
+Figure 2: Image of the complete project. The Bluetooth module is mounted on a separate Arduino breadboard, but this does not have any impact on the functioning of the program.
 
 # Arduino code
 
-The logic behind the Arduino program can be found in the logic chart below.
+The logic behind the Arduino program can be found in the logic chart in figure 3.
 
 ![bP9DRXin34RtEWMHLN85UvFunudH6WtgvW2CXl2ebIX1efAwHUzUIPunCi1iiZ3WaSZtFWgyJu9HihDAZ5Y2v-X_ae3689IZKkrQgSMH98UbMkpPY45h_X1exu9dOac0t44md4h1WmZg7eYrxoY2OQ4OSv1fxxUlsqthIXJBKMMvp4QZ6CzBfTvxOmbk7He-4ESxC0bkpvJk5C1YOr (1)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/8321e4d1-a773-4e3a-b967-f35e9f0d8d79)
 
-The is a main menu with three options, and the user can choose between each of these three options: the potentiometer, the flex sensor and the graphite sensor.
+Figure 3: Logic chart for the Arduino code, that shows what are the main procedures and methods and what the code mainly does.
+
+The is a main menu with three options, and the user can choose between each of these three options: the potentiometer, the flex sensor and the graphite sensor. These menus are showed below.
 
 ### Potentiometer menu
 
@@ -96,12 +100,15 @@ In this menu, the user selects the resistance value to be given to the potentiom
 
 ![IMG_1833](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/c86bfd6d-c473-4c29-aedd-c9c60b768446)
 
+Figure 4: Potentiometer menu.
+
 ### Flex sensor menu
 
 In this menu, the value of the resistance and the value of the angle of the flex sensor are displayed.  
 
 ![IMG_1834](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/1083f118-864a-41ad-b2f6-cd2d5c15ebec)
 
+Figure 5: Flex sensor menu.
 
 ### Grpahite sensor menu
 
@@ -109,6 +116,7 @@ In this menu, the user can see the current value of the graphite sensor. The use
 
 ![IMG_1835](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/0f888522-1073-4606-b248-1ee0906b1bc2)
 
+Figure 6: Graphite sensor menu.
 
 # KiCAD PCB design
 
@@ -116,50 +124,52 @@ To realise our PCB we have used KiCAD under its 7.0 version.
 
 First of all, we had to reproduce the electrical amplifier circuit (resistances, capacitors...) with a few changes and component additions. In order to adjust the gain of our circuit, we have replaced the resistance R2 by an MCP41050 digital potentiometer which can be controlled using the KY-040 rotary encoder. Then, for the realisation of the test bench we had to add some components that need to be connected to the power source, such as the flex sensor, the Bluetooth® module or the OLED screen. For that, we have created some symbols associated to the new elements. 
 
-On the picture below, it is possible to see our complete electrical circuit realised in KiCAD with the different symbols of the components. 
+On figure 7, it is possible to see our complete electrical circuit realised in KiCAD with the different symbols of the components. 
 
 ![Sin título (1)](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/d7db149d-7aac-44d3-a966-45203cd0fb59)
 
-Figure 2 : Complete schematic of the electrical circuit in KiCAD for the project.
+Figure 7 : Complete schematic of the electrical circuit in KiCAD for the project.
 
 
 Then, the second part is to realise the footprint of the PCB on KiCAD. However, all the components and the whole circuit have to fit on Arduino Uno Shield. So, the spatial arrangement must be thoughtful, while considering the 3D shape of the components and the specifications we have to follow for the PCB printing. 
 
-For the most commons components, we've used some predefined footprints but for the others we've created some specifical footprints thanks to the software. On the pictures below, it is possible to see the global footprint of our PCB and the 3D view. 
+For the most commons components, we've used some predefined footprints but for the others we've created some specifical footprints thanks to the software. All the footprints can be found in the KiCAD folder.
 
 ## Amplifier circuit
 
 The main role of the amplifier is to amplify sensor output voltages to make them measurable.
 
-On the figure below, you can see its electrical circuit.
+On figure 8 can be seen the electrical circuit of the amplifier.
 
 ![image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/22b4074c-a6f3-46b2-91a8-3a7a4a72a47d)
 
-Figure 3: Schematic of the operationnal amplifier circuit in KiCAD.
+Figure 8: Schematic of the operationnal amplifier circuit in KiCAD.
 
 ### LTC1050 Operationnal amplifier
 
-The LTC1050 is the operationnal amplifier used in our amplifier circuit. 
+The LTC1050 is the operationnal amplifier used in our amplifier circuit, than can be observed in figure 9.
 
 ![DIP-8](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/9779b100-5de5-48d5-8db4-3b4e4fddeefa)
 
+Figure 9: LTC1050 operational amplifier.
 
 ### MCP41050 Digital potentiometer
 
 The MCP41050 is the digital potentiometer used in our project. It varies up to 50,000 ohms depending on the command sent.
-It has 8 connections pins as you can see on the next figure. 
+It has 8 connections pins as can be seen in figure 10. 
 
 ![Microchip-MCP41050-I_SN-image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/a2f528a6-c030-491e-9876-67a0d771acc9)
 
+Figure 10: MCP41050 digital potentiometer.
 
 ## Graphite sensor
 
 The graphite sensor used in our project is made from paper with a trace to be colored in with different pencils. 
-In our electrical circuit, the sensor is connected between the 5V source and the positive input of the amplifier. 
+In our electrical circuit, the sensor is connected between the 5V (Vcc) source and the positive input of the amplifier (Vout), as can be seen in figure 11.
 
 ![Graphite_sensor](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/16bf690d-2f42-4ac8-a104-3a38da477129)
 
-Extracted from Niels Brun and Paul Besnard's GitHub site.
+Figure 11: Schematic for the graphite sensor. Extracted from Niels Brun and Paul Besnard's GitHub site.
 
 
 ## Flex sensor
@@ -168,20 +178,28 @@ The flex sensor, used for comparing the graphite-sensor measures, is mounted in 
 
 ![Flex_sensor](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/57c77a8c-33ca-4d10-ae2a-ecce92d62feb)
 
+Figure 12: Flex sensor. 
 
 ## KY-040 Rotary encoder
 
 The rotary encoder is a main part of our project. It allows the user to change the selected menu, enter and exit menus by turning or pressing the encoder.
-The rotary encoder has 5 pins connected to differents parts of the shield, as you can see on the figure below.  
+The rotary encoder has 5 pins connected to differents parts of the shield, as you can see on figure 13.  
 
 ![Encodeur_rotatoire](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/90a1ef97-2f27-425b-9fdc-b9fd0d33ee21)
 
+Figure 13: Rotary encoder KY-040.
 
 ## OLED screen
 
-On the Arduino shield, the OLED screen is connected to 4 pins, as you can see on the figure below. 
+On the Arduino shield, the OLED screen is connected to 4 pins, as you can see on figure 14.
+
+![OLED_screen](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/1159e612-ad18-43d1-9c8d-d024195a0167)
+
+Figure 14: The OLED screen, with 4 pins.
 
 # Android app
+
+
 
 # Test bench
 
