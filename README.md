@@ -35,8 +35,13 @@ This project covers the entire sensor field, right up to the development of a da
 
     - [Amplifier circuit](#amplifier-circuit)
     - [LTC1050 Operationnal amplifier](#ltc1050-operationnal-amplifier)
+    - [MCP41050 Digital potentiometer](#mcp41050-digital-potentiometer)
+    - [Graphite sensor](#graphite-sensor)
+    - [Flex sensor](#flex-sensor)
+    - [KY-040 Rotary encoder](#ky-040-rotary-encoder)
     - [OLED screen](#oled-screen)
-    - [Rotary encoder](#rotary-encoder)
+
+
       
 - [Android App](#android-app)
 
