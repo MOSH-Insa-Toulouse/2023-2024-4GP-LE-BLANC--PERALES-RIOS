@@ -41,7 +41,6 @@ This project covers the entire sensor field, right up to the development of a da
     - [KY-040 Rotary encoder](#ky-040-rotary-encoder)
     - [OLED screen](#oled-screen)
 
-
       
 - [Android App](#android-app)
 
@@ -56,7 +55,7 @@ This project covers the entire sensor field, right up to the development of a da
 - Datasheet describing the results of some measurements for the sensors. 
 
 
-To write the datasheet, a bench test must be used or built. In our project, we have used a bench test that was already at the department and that was perfect for our case.
+To write the datasheet, a bench test must be used or built. In our project, we have used a bench test that was already at the department, and that was perfect for our case.
 
 # Physics behind the resistance change in the graphite and the flex sensors
 
@@ -64,7 +63,7 @@ For the graphite and the flex sensors, let’s imagine they were a 2D layer of a
 
 On the one hand, when a compression force is applied to that 2D layer of atoms, the atoms would get closer to each other, thus reducing the mean distance per atom, facilitating the flow of an electric current, and reducing then the resistance. 
 
-On the other hand, when a tensile force is applied to the 2D layer of atoms, the atoms would get further apart from each other, thus increasing the mean distance per atom, making the electron “jumps” less favorable, and increasing the resistance. 
+On the other hand, when a tensile force is applied to the 2D layer of atoms, the atoms would get farther apart from each other, thus increasing the mean distance per atom, making the electron “jumps” less favorable, and increasing the resistance. 
 
 We can see in figure 1 how the compressive and tensile forces affect the geometry of the 2D plane. When generalizing the 2D plane to a 3D thin surface, the principle of the measurement stays the same.
 
@@ -75,7 +74,7 @@ Figure 1: Principle of the resistance measurement for the graphite and flex sens
 
 # Necessary components and image of the finished project
 
-In figure 2, the finished project, with all the components mounted on the shield, is showed. The only component that not mounted in the shield is the Bluetooth module, since what we thought to be a connection error was blocking the Arduino code from running.
+In figure 2, the finished project, with all the components mounted on the shield, is showed. The only component that not mounted in the shield has been the Bluetooth module, since what we thought to be a connection error was blocking the Arduino code from running.
 
 To carry out this project, we needed: 
   - 1 graphite-based paper sensor
@@ -129,9 +128,9 @@ Figure 6: Graphite sensor menu.
 
 # KiCAD PCB design
 
-To realise our PCB we have used KiCAD under its 7.0 version.
+To realise our PCB, we have used KiCAD under its 7.0 version.
 
-First of all, we had to reproduce the electrical amplifier circuit (resistances, capacitors...) with a few changes and component additions. In order to adjust the gain of our circuit, we have replaced the resistance R2 by an MCP41050 digital potentiometer which can be controlled using the KY-040 rotary encoder. Then, for the realisation of the test bench we had to add some components that need to be connected to the power source, such as the flex sensor, the Bluetooth® module or the OLED screen. For that, we have created some symbols associated to the new elements. 
+First of all, we had to reproduce the electrical amplifier circuit (resistances, capacitors...) with a few changes and component additions. In order to adjust the gain of our circuit, we have replaced the resistance R2 by an MCP41050 digital potentiometer which can be controlled using the KY-040 rotary encoder. Then, for the realisation of the test bench, we had to add some components that need to be connected to the power source, such as the flex sensor, the Bluetooth® module or the OLED screen. For that, we have created some symbols associated to the new elements. 
 
 On figure 7, it is possible to see our complete electrical circuit realised in KiCAD with the different symbols of the components. 
 
@@ -156,7 +155,7 @@ Figure 8: Schematic of the operationnal amplifier circuit in KiCAD.
 
 ## LTC1050 Operationnal amplifier
 
-The LTC1050 is the operationnal amplifier used in our amplifier circuit, than can be observed in figure 9.
+The LTC1050 is the operationnal amplifier used in our amplifier circuit that can be observed in figure 9.
 
 ![DIP-8](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/9779b100-5de5-48d5-8db4-3b4e4fddeefa)
 
@@ -165,7 +164,7 @@ Figure 9: LTC1050 operational amplifier.
 ## MCP41050 Digital potentiometer
 
 The MCP41050 is the digital potentiometer used in our project. It varies up to 50,000 ohms depending on the command sent.
-It has 8 connections pins as can be seen in figure 10. 
+It has eight connections pins as can be seen in figure 10. 
 
 ![Microchip-MCP41050-I_SN-image](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/a2f528a6-c030-491e-9876-67a0d771acc9)
 
@@ -192,7 +191,7 @@ Figure 12: Flex sensor.
 ## KY-040 Rotary encoder
 
 The rotary encoder is a main part of our project. It allows the user to change the selected menu, enter and exit menus by turning or pressing the encoder.
-The rotary encoder has 5 pins connected to differents parts of the shield, as you can see on figure 13.  
+The rotary encoder has five pins connected to differents parts of the shield, as you can see on figure 13.  
 
 ![Encodeur_rotatoire](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/90a1ef97-2f27-425b-9fdc-b9fd0d33ee21)
 
@@ -200,11 +199,11 @@ Figure 13: Rotary encoder KY-040.
 
 ## OLED screen
 
-On the Arduino shield, the OLED screen is connected to 4 pins, as you can see on figure 14.
+On the Arduino shield, the OLED screen is connected to four pins, as you can see on figure 14.
 
 ![OLED_screen](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/1159e612-ad18-43d1-9c8d-d024195a0167)
 
-Figure 14: The OLED screen, with 4 pins.
+Figure 14: The OLED screen, with four pins.
 
 # Android app
 
@@ -244,7 +243,7 @@ To realize the measures, we have decided to use a test bench consisting of semi-
 
 Figure 19: Test bench used.
 
-We have tested 5 graphite-sensors, each made with a different type of pencil : 3B, 2B, B, H, 2H. 
+We have tested 5 graphite-sensors. Each, made with a different type of pencil: 3B, 2B, B, H, 2H. 
 To carry out the measurements, we placed the sensors on the various cylinders, in tension and compression, as can be seen respectively in figures 20 and 21. This enabled us to measure differences in resistance as a function of pencil type and deformation. 
 
 ![Deformation_tension](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/5b5fe1e5-2fde-4161-aca8-79e347c75b0c)
