@@ -1,6 +1,6 @@
 # Graphite-based sensor project
 
-## Students : Maël LE BLANC, Daniel PERALES RIOS
+## Students: Maël LE BLANC, Daniel PERALES RIOS
 
 Département de Génie Physique
 
