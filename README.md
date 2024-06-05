@@ -40,13 +40,18 @@ This project covers the entire sensor field, right up to the development of a da
 
 
 # Deliverables
-The deliverables for this project are an Arduino shield with its associated Arduino code, an Android app that is able to gather the data sent by the Arduino shield, and a datasheet describing the results of some measurements for the sensors. 
+
+- Arduino shield containing the BT module, the OLED screen...
+- Arduino code for controlling the Arduino shield.
+- Android app that is able to gather the data sent by the Arduino shield.
+- Datasheet describing the results of some measurements for the sensors. 
+
 
 To write the datasheet, a bench test must be used or built. In our project, we have used a bench test that was already at the department and that was perfect for our case.
 
 # Physics behind the resistance change in the graphite and the flex sensors
 
-For the graphite and the flex sensors, let’s imagine they were a 2D layer of atoms to which we could apply tension and compression. This 2D layer of atoms would have a mean distance per atom depending on the atomic arrangement. The greater these mean distance between atoms is, the more difficult it is for an electron to “jump” from one atom to another, and vice versa. When these electron “jumps” are coordinated following the same direction (for example when we apply a potential difference between the two extremes of the 2D plane), we can say that an electric current is present.
+For the graphite and the flex sensors, let’s imagine they were a 2D layer of atoms to which we could apply tension and compression. This 2D layer of atoms would have a mean distance per atom depending on the atomic arrangement. The greater these mean distance between atoms is, the more difficult it is for an electron to “jump” from one atom to another, and vice versa. When these electron “jumps” are coordinated following the same direction (for example when we apply a potential difference between the two extremes of the 2D plane), we can say that an electric current is present. When this happens, it is called "percolation".
 
 On the one hand, when a compression force is applied to that 2D layer of atoms, the atoms would get closer to each other, thus reducing the mean distance per atom, facilitating the flow of an electric current, and reducing then the resistance. 
 
@@ -59,6 +64,8 @@ Figure 1: Principle of the resistance measurement for the graphite and flex sens
 
 
 # Necessary components and image of the finished project
+
+In figure 2, the finished project, with all the components mounted on the shield, is showed. 
 
 To carry out this project, we needed: 
   - 1 graphite-based paper sensor
@@ -73,7 +80,7 @@ To carry out this project, we needed:
   - Capacitors
 
 ![PCB_complet](https://github.com/MOSH-Insa-Toulouse/2023-2024-4GP-LE-BLANC--PERALES-RIOS/assets/72049530/649935e4-a762-47ec-a7d6-bdfd1e432b26)
-
+Figure 2: Image of the complete project.
 
 # Arduino code
 
