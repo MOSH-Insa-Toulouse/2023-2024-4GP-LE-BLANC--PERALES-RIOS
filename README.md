@@ -26,6 +26,10 @@ This project covers the entire sensor field, right up to the development of a da
 - [Necessary components and image of the finished project](#necessary-components-and-image-of-the-finished-project)
 
 - [Arduino code](#arduino-code)
+    - [Potentiometer menu](#potentiometer-menu)
+    - [Graphite sensor](#graphite-sensor)
+    - [OLED screen](#oled-screen)
+    - [Rotary encoder](#rotary-encoder)
 
 - [KiCAD PCB design](#kicad-pcb-design)
 
@@ -94,7 +98,7 @@ Figure 3: Logic chart for the Arduino code, that shows what are the main procedu
 
 The is a main menu with three options, and the user can choose between each of these three options: the potentiometer, the flex sensor and the graphite sensor. These menus are showed below.
 
-### Potentiometer menu
+## Potentiometer menu
 
 In this menu, the user selects the resistance value to be given to the potentiometer by placing the cursor over the available values. The user exits the calibration menu by pressing the encoder button. 
 
@@ -102,7 +106,7 @@ In this menu, the user selects the resistance value to be given to the potentiom
 
 Figure 4: Potentiometer menu.
 
-### Flex sensor menu
+## Flex sensor menu
 
 In this menu, the value of the resistance and the value of the angle of the flex sensor are displayed.  
 
@@ -110,7 +114,7 @@ In this menu, the value of the resistance and the value of the angle of the flex
 
 Figure 5: Flex sensor menu.
 
-### Grpahite sensor menu
+## Grpahite sensor menu
 
 In this menu, the user can see the current value of the graphite sensor. The user exits to the main menu by pressing the encoder button.
 
